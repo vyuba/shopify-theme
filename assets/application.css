@@ -1051,6 +1051,10 @@ video {
   height: 100%;
 }
 
+.h-10 {
+  height: 2.5rem;
+}
+
 .w-6 {
   width: 1.5rem;
 }
