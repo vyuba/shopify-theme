@@ -4,8 +4,8 @@
           display: none !important;
         }
       </style>
-  <div class="mx-auto px-3 w-full sm:px-3">
-    <div class="flex justify-between items-center py-3">
+  <div class="mx-auto px-3 w-full fixed top-0 bg-white sm:px-3 h-11">
+    <div class="flex justify-between h-full items-center overflow-hidden  ">
       <div class="-ml-2 -my-2 mr-3 lg:hidden flex justify-evenly items-center">
         <button @click="openMenu = !openMenu" type="button" class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
           {% render 'icon-hamburger-menu' %}
@@ -39,8 +39,8 @@
       <!-- STORE NAME / STORE LOGO -->
       <div class="flex pr-8 justify-center truncate">
         <h1 class="text-xl font-bold truncate">
-            <a href="/" class="block">
-            {{ shop.name }}
+            <a href="{{ routes.root_url  }}" class="block">
+                <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}" alt="Default Logo Image" class="w-20">
           </a>
         </h1>
       </div>
