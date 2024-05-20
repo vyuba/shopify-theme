@@ -1,4 +1,4 @@
-<div class="m-auto    ">
+<section class="m-auto">
     <div class="text-5xl md:text-9xl text-red-500 font-bold my-4"> {{ section.settings.title }}</div>
     {% if settings.image %}
         <img src="{{ settings.image | image_url: '300x' }}" alt="Button Image" height="fit" width="fit" class="h-auto w-auto">
@@ -14,7 +14,7 @@
         {% endif %}
         <a class="underline underline-offset-2 decoration-dotted font-bold hover:text-red-500  " href="{{ shop_url }}">{{ section.settings.button_label |  capitalize }}→</a>
     </div>
-</div>
+</section>
 {% schema %}
 {
     "name": "Template 404",
