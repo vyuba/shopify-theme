@@ -1,0 +1,103 @@
+<div class="relative bg-white">
+  <div class="mx-auto px-3 sm:px-3">
+    <div class="flex justify-between items-center py-3 md:justify-start md:space-x-3">
+      <div class="-ml-2 -my-2 mr-3 md:hidden flex justify-evenly items-center">
+        <button type="button" class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
+          {% render 'icon-hamburger-menu' %}
+        </button>
+        <a class="block md:hidden" href="{{ routes.search_url }}" class="text-base text-gray-500 hover:text-gray-900">
+          {% render 'icon-search' -%}
+        </a>
+      </div>
+      <!-- NAVIGATION MENU -->
+      <nav class="hidden md:flex space-x-10 justify-start">
+        {% for link in linklists['main-menu'].links %}
+          {% if link.links != blank %}
+            <div class="relative">
+              <button type="button" class="inline-flex items-center text-base text-gray-500 hover:text-gray-900">
+                {{ link.title }}
+              </button>
+            </div>
+          {% else %}
+            <div class="relative">
+              <a
+                class="{% if link.active == true %} text-red-600  {% endif %}"
+                href="{{ link.url }}"
+                class="text-base text-gray-500 hover:text-gray-900"
+              >
+                {{ link.title }}
+              </a>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </nav>
+      <!-- STORE NAME / STORE LOGO -->
+      <div class="flex justify-center lg:flex-1 truncate">
+        <h1 class="text-xl font-bold truncate">{{ shop.name }}</h1>
+      </div>
+
+      <div class="flex items-center justify-end  flex-1 space-x-5">
+        <a class="hidden md:block" href="{{ routes.search_url }}" class="text-base text-gray-500 hover:text-gray-900">
+          {% render 'icon-search' -%}
+        </a>
+        <a href="{{ routes.cart_url }}" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
+          <svg class="w-6 h-6">
+            {% render 'icon-shopping-bag' %}
+          </svg>
+        </a>
+            {% if shop.customer_accounts_enabled == true %}
+                <a href="{{ routes.account_login_url }}" class="text-base text-gray-500 hover:text-gray-900">Login</a>
+                <a href="{{ routes.account_register_url }}" class="text-base text-gray-500 hover:text-gray-900">Register</a>            
+            {% endif %}
+      </div>
+    </div>
+  </div>
+  <nav id="mobile-navigation" class="fixed md:hidden top-0 right-0 bottom-0 left-0 backdrop-blur-sm    z-10">
+    <!-- UL Links -->
+    <ul class="absolute top-0 left-0 bottom-0 w-64 pb-4 bg-white drop-shadow-xl z-10 transition-all">
+      <div class="flex gap-4 items-center">
+        <button type="button" class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
+          {% render 'icon-close-button' %}
+        </button>
+        <a class="block" href="{{ routes.search_url }}" class="text-base text-gray-500 hover:text-gray-900">
+          {% render 'icon-search' %}
+        </a>
+      </div>
+      {% for list in linklists['main-menu'].links %}
+          <li class="border-b  border-black {% if list.title == 'Store'  %}
+            hidden
+          {% endif %}">
+            <a
+              href="{{ list.url }}"
+              class="  block p-4"
+              aria-current="true"
+            >
+            {% if list.title == 'Magazine' %}   
+                {{ list.title }}
+                {% elsif list.title == 'Readytowear' %}
+                    {{ list.title }}
+                {% else %}
+            {% endif %}
+            </a>
+          </li>
+      {% endfor %}
+      <ul class="border-b p-4 border-black">
+        <li class=" flex items-center justify-between w-full">
+            <p>information</p>
+            {% render 'icon-dropdown-notOpen' %}
+        </li>
+        {% for list in linklists['Footer'].links %}
+            <li class="py-4">
+              <a
+                href="{{ list.url }}"
+                class=""
+                aria-current="true"
+              >
+                {{ list.title }}
+              </a>
+            </li>
+        {% endfor %}
+    </ul>
+    </ul>
+  </nav>
+</div>
