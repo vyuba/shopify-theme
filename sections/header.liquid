@@ -40,7 +40,7 @@
       <div class="flex pr-8 justify-center truncate">
         <h1 class="text-xl font-bold truncate">
             <a href="{{ routes.root_url  }}" class="block">
-                <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}" alt="Default Logo Image" class="w-20">
+                <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}" alt="Default Logo Image" class="w-20 ">
           </a>
         </h1>
       </div>
@@ -73,9 +73,7 @@
         </a>
       </div>
       {% for list in linklists['main-menu'].links %}
-          <li class="border-b  border-black {% if list.title == 'Store'  %}
-            hidden
-          {% endif %}">
+      <li class="border-b{% if list.title == 'Store'  %}hidden {% endif %}  border-black">
             <a
               href="{{ list.url }}"
               class="  block p-4"
@@ -85,7 +83,11 @@
                 {{ list.title }}
                 {% elsif list.title == 'Readytowear' %}
                     {{ list.title }}
-                {% else %}
+                {% elsif list.title == 'Store' %}
+                        <div class=" flex items-center border-black justify-between w-full">
+                            <p>store</p>
+                            {% render 'icon-dropdown-notOpen' %}
+                        </div>
             {% endif %}
             </a>
           </li>
@@ -96,7 +98,7 @@
             {% render 'icon-dropdown-notOpen' %}
         </li>
         {% for list in linklists['Footer'].links %}
-            <li class="py-4">
+            <li class="py-4 hidden">
               <a
                 href="{{ list.url }}"
                 class=""
@@ -107,6 +109,10 @@
             </li>
         {% endfor %}
     </ul>
+    <div class="w-full grid place-items-center">
+        <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}" alt="Default Logo Image" class="w-20 ">
+        <h1 class="font-bold text-xl capitalize text-center">Manual for freedom research and creativity</h1>
+    </div>
     </ul>
   </nav>
 
