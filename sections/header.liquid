@@ -1,8 +1,13 @@
-<div class="relative bg-white">
+<div class="relative bg-white" x-data="{ openMenu: false, openCart: false }" :class="{ 'overflow-hidden': openMenu || openCart, 'overflow-visible': !openMenu && !openCart }">
+    <style>
+        [x-cloak] {
+          display: none !important;
+        }
+      </style>
   <div class="mx-auto px-3 sm:px-3">
-    <div class="flex justify-between items-center py-3 md:justify-start md:space-x-3">
+    <div class="flex justify-between items-center py-3">
       <div class="-ml-2 -my-2 mr-3 md:hidden flex justify-evenly items-center">
-        <button type="button" class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
+        <button @click="openMenu = !openMenu" type="button" class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
           {% render 'icon-hamburger-menu' %}
         </button>
         <a class="block md:hidden" href="{{ routes.search_url }}" class="text-base text-gray-500 hover:text-gray-900">
@@ -10,7 +15,7 @@
         </a>
       </div>
       <!-- NAVIGATION MENU -->
-      <nav class="hidden md:flex space-x-10 justify-start">
+      <nav class="hidden md:flex justify-start">
         {% for link in linklists['main-menu'].links %}
           {% if link.links != blank %}
             <div class="relative">
@@ -32,15 +37,15 @@
         {% endfor %}
       </nav>
       <!-- STORE NAME / STORE LOGO -->
-      <div class="flex justify-center lg:flex-1 truncate">
+      <div class="flex pr-8 justify-center truncate">
         <h1 class="text-xl font-bold truncate">{{ shop.name }}</h1>
       </div>
 
-      <div class="flex items-center justify-end  flex-1 space-x-5">
+      <div class="flex items-center  justify-end">
         <a class="hidden md:block" href="{{ routes.search_url }}" class="text-base text-gray-500 hover:text-gray-900">
           {% render 'icon-search' -%}
         </a>
-        <a href="{{ routes.cart_url }}" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
+        <a @click="openCart = !openCart"  class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
           <svg class="w-6 h-6">
             {% render 'icon-shopping-bag' %}
           </svg>
@@ -52,11 +57,11 @@
       </div>
     </div>
   </div>
-  <nav id="mobile-navigation" class="fixed md:hidden top-0 right-0 bottom-0 left-0 backdrop-blur-sm    z-10">
+  <nav id="mobile-navigation" :class="openMenu ? 'visible' : 'invisible' " x-cloak class="fixed md:hidden top-0 right-0 bottom-0 left-0 backdrop-blur-sm    z-10">
     <!-- UL Links -->
-    <ul class="absolute top-0 left-0 bottom-0 w-64 pb-4 bg-white drop-shadow-xl z-10 transition-all">
+    <ul class="absolute top-0 left-0 bottom-0 w-64 pb-4 bg-white drop-shadow-xl z-10 transition-all" :class="openMenu ? '-translate-x-0' : '-translate-x-full'">
       <div class="flex gap-4 items-center">
-        <button type="button" class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
+        <button @click="openMenu = !openMenu" type="button" class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
           {% render 'icon-close-button' %}
         </button>
         <a class="block" href="{{ routes.search_url }}" class="text-base text-gray-500 hover:text-gray-900">
@@ -100,4 +105,16 @@
     </ul>
     </ul>
   </nav>
+
+ <div id="cart-navigation" :class="{ 'visible': openCart, 'invisible': !openCart }" x-cloak class="fixed top-0 right-0 bottom-0 left-0 backdrop-blur-sm z-10">
+    <!-- UL Links -->
+    <div class="absolute top-0 right-0 bottom-0 w-[100vw] md:w-[28rem]  pb-4 bg-white drop-shadow-xl z-10 transition-all" :class="openCart ? 'translate-x-0' : 'translate-x-full'">
+      <div class="flex justify-between my-2 mx-5 items-center border-b border-black">
+        {% render 'icon-shopping-bag' %}
+        <button @click="openCart = !openCart" type="button" class="bg-white p-2 inline-flex items-center justify-center focus:outline-none">
+          {% render 'icon-close-button' %}
+        </button>
+      </div>
+    </div>
+  </div>
 </div>
