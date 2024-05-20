@@ -1055,6 +1055,10 @@ video {
   height: 2.5rem;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -1616,6 +1620,11 @@ video {
   padding-bottom: 1.5rem;
 }
 
+.py-7 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -2042,6 +2051,11 @@ video {
     --tw-space-x-reverse: 0;
     margin-right: calc(0.75rem * var(--tw-space-x-reverse));
     margin-left: calc(0.75rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
