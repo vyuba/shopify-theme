@@ -96,19 +96,17 @@
         <li class=" border-b  border-black">
           <a
             href="{{ list.url }}"
-            class="  block p-4 {% if list.title == 'Store'  %}hidden {% endif %}"
+            class="  block p-4 {% if list.title == 'Merch'  %}hidden {% endif %}"
             aria-current="true"
           >
             {% if list.title == 'Magazine' %}
               {{ list.title |  capitalize }}
-            {% elsif list.title == 'Readytowear' %}
-              {{ list.title |  capitalize }}
             {% endif %}
           </a>
-          {% if list.title == 'Store' %}
+          {% if list.title == 'Merch' %}
             <ul class="dropdownBtn border-b p-4">
               <li class="capitalize flex items-center justify-between w-full">
-                <p>store</p>
+                <p>Merch</p>
                 {% render 'icon-dropdown-notOpen' %}
               </li>
                 <div class="list collections-container hidden ">
