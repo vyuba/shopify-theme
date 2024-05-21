@@ -1129,6 +1129,34 @@ video {
   height: 50%;
 }
 
+.h-\[40\%\] {
+  height: 40%;
+}
+
+.h-\[45\%\] {
+  height: 45%;
+}
+
+.h-\[44\%\] {
+  height: 44%;
+}
+
+.h-\[44\.5\%\] {
+  height: 44.5%;
+}
+
+.h-\[44\.7\%\] {
+  height: 44.7%;
+}
+
+.h-\[44\.8\%\] {
+  height: 44.8%;
+}
+
+.h-\[44\.9\%\] {
+  height: 44.9%;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -1542,6 +1570,10 @@ video {
 
 .overflow-x-auto {
   overflow-x: auto;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
 }
 
 .overflow-x-scroll {
