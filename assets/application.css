@@ -624,6 +624,10 @@ video {
   inset: 0px;
 }
 
+.inset-4 {
+  inset: 1rem;
+}
+
 .inset-y-0 {
   top: 0px;
   bottom: 0px;
@@ -1157,6 +1161,22 @@ video {
   height: 44.9%;
 }
 
+.h-\[70\%\] {
+  height: 70%;
+}
+
+.h-\[80\%\] {
+  height: 80%;
+}
+
+.h-\[-80\%\] {
+  height: -80%;
+}
+
+.h-\[-90\%\] {
+  height: -90%;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -1688,6 +1708,11 @@ video {
 
 .fill-white {
   fill: #fff;
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .object-cover {
