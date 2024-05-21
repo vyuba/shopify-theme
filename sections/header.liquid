@@ -18,9 +18,6 @@
         >
           {% render 'icon-hamburger-menu' %}
         </button>
-        <a class="block lg:hidden" href="{{ routes.search_url }}" class="text-base text-gray-500 hover:text-gray-900">
-          {% render 'icon-search' -%}
-        </a>
       </div>
       <!-- NAVIGATION MENU -->
       <nav class="hidden lg:flex gap-4 items-center justify-start">
@@ -45,16 +42,16 @@
         {% endfor %}
       </nav>
       <!-- STORE NAME / STORE LOGO -->
-      <div class="flex pr-8 justify-center truncate">
+      <div class="flex  justify-center truncate">
         <h1 class="text-xl font-bold truncate">
           <a href="{{ routes.root_url  }}" class="block">
-            <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}" alt="Default Logo Image" class="w-20 ">
+            <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}" alt="Default Logo Image" class="w-20">
           </a>
         </h1>
       </div>
 
       <div class="flex items-center gap-4  justify-end">
-        <a class="hidden lg:block" href="{{ routes.search_url }}" class="text-base text-gray-500 hover:text-gray-900">
+        <a class="" href="{{ routes.search_url }}" class="text-base text-gray-500 hover:text-gray-900">
           {% render 'icon-search' -%}
         </a>
         <a @click="openCart = !openCart" class="whitespace-nowrap text-base text-gray-500 hover:text-gray-900">
@@ -96,49 +93,13 @@
         <li class=" border-b  border-black">
           <a
             href="{{ list.url }}"
-            class="  block p-4 {% if list.title == 'Merch'  %}hidden {% endif %}"
+            class=" block p-4"
             aria-current="true"
           >
-            {% if list.title == 'Magazine' %}
-              {{ list.title |  capitalize }}
-            {% endif %}
+              {{ list.title |  capitalize }} 
           </a>
-          {% if list.title == 'Merch' %}
-            <ul class="dropdownBtn border-b p-4">
-              <li class="capitalize flex items-center justify-between w-full">
-                <p>Merch</p>
-                {% render 'icon-dropdown-notOpen' %}
-              </li>
-                <div class="list collections-container hidden ">
-                  {% for collection in collections %}
-                    <div class="collection-item pt-4">
-                      <h2>{{ collection.title |  capitalize }}</h2>
-                    </div>
-                  {% endfor %}
-                </div>
-            </ul>
-          {% endif %}
         </li>
       {% endfor %}
-      <ul class="dropdownBtn border-b capitalize p-4 border-black">
-        <li class=" flex items-center justify-between w-full">
-          <p>information</p>
-          {% render 'icon-dropdown-notOpen' %}
-        </li>
-        {% for list in linklists.Footer.links %}
-            <div class="list hidden ">
-                <li class="py-4">
-                  <a
-                    href="{{ list.url }}"
-                    class=""
-                    aria-current="true"
-                  >
-                    {{ list.title }}
-                  </a>
-                </li>
-            </div>
-        {% endfor %}
-      </ul>
       <div class="w-full grid place-items-center">
         <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}" alt="Default Logo Image" class="w-20 ">
         <h1 class="font-bold text-xl capitalize text-center">Manual for freedom research and creativity</h1>
