@@ -1,10 +1,13 @@
-<div class="w-fit"> 
-  <div class="display: block; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;">
+<div class=" hover:text-red-600 text-white"> 
+  <div class="">
     <a href="{{ product.url | within: collection }}">
       <img src="{{ product.featured_image.src | img_url: 'large' }}" alt="{{ product.featured_image.alt | escape }}" height="" width="">
     </a>
   </div>
-    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+  <div class="flex flex-col-reverse  ">
     {{ product.price | money }}
+    <a class="font-bold capitalize" href="{{ product.url | within: collection }}">
+    {{ product.title | capitalize }}</a>
     {% unless product.available %}<br><strong>sold out</strong>{% endunless %}
+  </div>
 </div>
