@@ -1,10 +1,6 @@
 <div class="m-auto">
     <div class="text-5xl md:text-9xl text-red-500 font-bold my-4"> {{ section.settings.title }}</div>
-    {% if settings.image %}
-        <img src="{{ settings.image | image_url: '300x' }}" alt="Button Image" height="fit" width="fit" class="h-auto w-auto">
-      {% else %}
-        <img src="{{ '032c-baby.gif' | asset_url }}" alt="Default Button Image" height="fit" width="fit" class="h-auto w-auto">
-      {% endif %}
+    <img src="{{ '{{ section.settings.image | image_tag }}' | asset_url }}" alt="Default Button Image" height="fit" width="fit" class="h-auto w-auto">
     <div class="my-4">
         <p class="text-base md:text-xl leading-normal">{{ section.settings.subtext_title |  capitalize  }}</p>
         {% if section.settings.button_url == blank %}
