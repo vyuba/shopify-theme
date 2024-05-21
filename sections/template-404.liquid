@@ -1,6 +1,6 @@
 <div class="m-auto">
     <div class="text-5xl md:text-9xl text-red-500 font-bold my-4"> {{ section.settings.title }}</div>
-    <img src="{{ '032c-baby.gif' | asset_url }}" alt="Default Button Image" height="fit" width="fit" class="h-auto w-auto">
+    <img src="{{ section.settings.image_with_text_image | asset_url}}" alt="Default Button Image" height="fit" width="fit" class="h-auto w-auto">
     <div class="my-4">
         <p class="text-base md:text-xl leading-normal">{{ section.settings.subtext_title |  capitalize  }}</p>
         {% if section.settings.button_url == blank %}
@@ -43,10 +43,10 @@
         },
         {
             "type": "image_picker",
-            "id": "image",
-            "default":"032c-baby.gif",
-            "label": "image"
+            "id": "image_with_text_image",
+            "label": "Image"
         }
+
         ]
 }
 {% endschema %}
