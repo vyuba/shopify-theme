@@ -1,3 +1,172 @@
 <section>
-    <p>preye</p>
+  <div class="w-full mx-4">
+    <ul class="overflow-x-scroll flex-row no-scrollbar  flex items-center gap-4 whitespace-nowrap ">
+      {% for collection in collections %}
+        <li class="underline underline-offset-2 decoration-dotted text-xl font-bold capitalize hover:text-red-600 ">
+          <p class="">
+            {{ collection.title | link_to: collection.url | capitalize }}
+          </p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="grid grid-cols-2 mt-0">
+    <a
+      class="chakra-link h-48 md:h-64 2xl:h-96 w-full flex css-12ooz0z"
+      href="{{ routes.collections_url }}"
+      style="background-color: rgb(107, 255, 79);"
+    >
+      <div class="p-4 pb-2 flex items-end flex-col flex-1">
+        <div class="relative w-full h-full">
+          <div>
+            <div style="display: block; overflow: hidden; position: absolute; inset: 0px; box-sizing: border-box; margin: 0px;">
+              <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}">
+            </div>
+          </div>
+        </div>
+        <div class="dotted-link relative w-full text-sm md:text-lg text-center py-2">032c STORE</div>
+      </div></a
+    ><a
+      class="chakra-link h-48 md:h-64 2xl:h-96 w-full flex css-12ooz0z"
+      href="{{ routes.collections_url }}"
+      style="background-color: rgb(254, 0, 0);"
+    >
+      <div class="p-4 pb-2 flex items-end flex-col flex-1">
+        <div class="relative w-full h-full">
+          <div>
+            <div style="display: block; overflow: hidden; position: absolute; inset: 0px; box-sizing: border-box; margin: 0px;">
+              <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}">
+            </div>
+          </div>
+        </div>
+        <div class="dotted-link relative w-full text-sm md:text-lg text-center py-2">BUY MAGAZINES</div>
+      </div>
+    </a>
+  </div>
+  <div class="tickerwrapper">
+    <ul class='list'>
+       <li class='listitem'>
+         <span>This is list item 1</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 2</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 3</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 4</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 5</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 1</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 2</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 3</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 4</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 5</span>
+       </li>
+      <li class='listitem'>
+         <span>This is list item 1</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 2</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 3</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 4</span>
+       </li>
+       <li class='listitem'>
+         <span>This is list item 5</span>
+       </li>
+   </ul>
+ </div>
+
+ <div class="grid grid-cols-2 mt-0">
+    <a
+      class="chakra-link h-48 md:h-64 2xl:h-96 w-full flex css-12ooz0z"
+      href="{{ routes.collections_url }}"
+      style="background-color: rgb(107, 255, 79);"
+    >
+      <div class="p-4 pb-2 flex items-end flex-col flex-1">
+        <div class="relative w-full h-full">
+          <div>
+            <div style="display: block; overflow: hidden; position: absolute; inset: 0px; box-sizing: border-box; margin: 0px;">
+              <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}">
+            </div>
+          </div>
+        </div>
+        <div class=" dotted-link relative w-full text-sm md:text-lg text-center py-2">032c STORE</div>
+      </div></a
+    ><a
+      class="chakra-link h-48 md:h-64 2xl:h-96 w-full flex css-12ooz0z"
+      href="{{ routes.collections_url }}"
+      style="background-color: rgb(254, 0, 0);"
+    >
+      <div class="p-4 pb-2 flex items-end flex-col flex-1">
+        <div class="relative w-full h-full">
+          <div>
+            <div style="display: block; overflow: hidden; position: absolute; inset: 0px; box-sizing: border-box; margin: 0px;">
+              <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}">
+            </div>
+          </div>
+        </div>
+        <div class="dotted-link relative w-full text-sm md:text-lg text-center py-2">BUY MAGAZINES</div>
+      </div>
+    </a>
+  </div>
+ 
 </section>
+<style>
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+.tickerwrapper {
+  top: 30px;
+  left:0%;
+  border: 1px solid #444;
+  background: black;
+  color: red;
+  width: 99.9%;
+  height: 30px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+ul.list {
+  position: relative;
+  display: inline-block;
+  list-style: none;
+  padding:0;
+  margin:0;
+}
+
+ul.list.cloned {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+ul.list li {
+  float: left;
+  padding-left: 20px;
+}
+</style>
