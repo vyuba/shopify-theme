@@ -1,9 +1,9 @@
 <div class="m-auto">
     <div class="text-5xl md:text-9xl text-red-500 font-bold my-4"> {{ section.settings.title }}</div>
-    {{ section.settings.image_with_text_image | image_url: width: 1500 | image_tag }}
+    {{ section.settings.image_with_text_image | image_url: width: 1500 | image_tag | asset_url }}
     <div class="my-4">
         <p class="text-base md:text-xl leading-normal">{{ section.settings.subtext_title |  capitalize  }}</p>
-        {% if section.settings.button_url == blank %}
+        {% if section.settings.button_url == null %}
             {% assign shop_url = shop.secure_url %}
             {% else %}
                 {% assign shop_url = section.settings.button_url %}

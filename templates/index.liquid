@@ -1,172 +1,227 @@
-<section>
-  <div class="w-full mx-4">
-    <ul class="overflow-x-scroll flex-row no-scrollbar  flex items-center gap-4 whitespace-nowrap ">
-      {% for collection in collections %}
-        <li class="underline underline-offset-2 decoration-dotted text-xl font-bold capitalize hover:text-red-600 ">
-          <p class="">
-            {{ collection.title | link_to: collection.url | capitalize }}
-          </p>
-        </li>
-      {% endfor %}
+<section class="flex flex-col w-full pt-10 h-screen  ">
+  {% comment %}
+    <div class="w-full mx-4">
+      <ul class="overflow-x-scroll flex-row no-scrollbar  flex items-center gap-4 whitespace-nowrap ">
+        {% for collection in collections %}
+          <li class="underline underline-offset-2 decoration-dotted text-xl font-bold capitalize hover:text-red-600 ">
+            <p class="">
+              {{ collection.title | link_to: collection.url | capitalize }}
+            </p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endcomment %}
+<div class="page-conatiner w-full h-full flex flex-col md:flex-row">
+        <div class="md:w-1/2 h-1/2 md:h-full md:border-r border-white bg-red-500   ">
+            <h1 class="capitalize text-2xl text-white font-medium font-sans  ">magazine</h1>
+        </div>
+        <div class="stock-ticker md:hidden bg-black text-white overflow-hidden select-none flex gap-[var(--gap)] py-1 border-y border-white">
+            <ul class="ticker-list list-none flex-shrink-0 min-w-full flex justify-between items-center gap-[var(--gap)] animate-scroll">
+              <li class="minus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="plus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">+Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="plus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="minus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="plus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="minus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="plus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="minus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+            </ul>
+        
+            <ul
+              class="ticker-list list-none flex-shrink-0 min-w-full flex justify-between items-center gap-[var(--gap)] animate-scroll"
+              aria-hidden="true"
+            >
+              <li class="minus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="plus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="plus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="minus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="plus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit ametA</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="minus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="plus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+              <li class="minus flex items-center">
+                <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+                <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+                <span class="change">Lorem ipsum dolor sit amet</span>
+              </li>
+            </ul>
+        </div>
+    <div class="md:w-1/2 h-1/2 md:h-full md:border-l border-white bg-black">
+            <h1 class="capitalize text-2xl text-white font-medium font-sans  ">magazine</h1>
+    </div>
+</div>
+<div class="stock-ticker hidden md:flex bg-black text-white overflow-hidden select-none  gap-[var(--gap)] py-1 border-y border-white">
+    <ul class="ticker-list list-none flex-shrink-0 min-w-full flex justify-between items-center gap-[var(--gap)] animate-scroll">
+      <li class="minus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="plus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">+Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="plus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="minus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="plus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="minus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="plus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="minus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
     </ul>
-  </div>
-  <div class="grid grid-cols-2 mt-0">
-    <a
-      class="chakra-link h-48 md:h-64 2xl:h-96 w-full flex css-12ooz0z"
-      href="{{ routes.collections_url }}"
-      style="background-color: rgb(107, 255, 79);"
-    >
-      <div class="p-4 pb-2 flex items-end flex-col flex-1">
-        <div class="relative w-full h-full">
-          <div>
-            <div style="display: block; overflow: hidden; position: absolute; inset: 0px; box-sizing: border-box; margin: 0px;">
-              <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}">
-            </div>
-          </div>
-        </div>
-        <div class="dotted-link relative w-full text-sm md:text-lg text-center py-2">032c STORE</div>
-      </div></a
-    ><a
-      class="chakra-link h-48 md:h-64 2xl:h-96 w-full flex css-12ooz0z"
-      href="{{ routes.collections_url }}"
-      style="background-color: rgb(254, 0, 0);"
-    >
-      <div class="p-4 pb-2 flex items-end flex-col flex-1">
-        <div class="relative w-full h-full">
-          <div>
-            <div style="display: block; overflow: hidden; position: absolute; inset: 0px; box-sizing: border-box; margin: 0px;">
-              <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}">
-            </div>
-          </div>
-        </div>
-        <div class="dotted-link relative w-full text-sm md:text-lg text-center py-2">BUY MAGAZINES</div>
-      </div>
-    </a>
-  </div>
-  <div class="tickerwrapper">
-    <ul class='list'>
-       <li class='listitem'>
-         <span>This is list item 1</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 2</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 3</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 4</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 5</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 1</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 2</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 3</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 4</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 5</span>
-       </li>
-      <li class='listitem'>
-         <span>This is list item 1</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 2</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 3</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 4</span>
-       </li>
-       <li class='listitem'>
-         <span>This is list item 5</span>
-       </li>
-   </ul>
- </div>
 
- <div class="grid grid-cols-2 mt-0">
-    <a
-      class="chakra-link h-48 md:h-64 2xl:h-96 w-full flex css-12ooz0z"
-      href="{{ routes.collections_url }}"
-      style="background-color: rgb(107, 255, 79);"
+    <ul
+      class="ticker-list list-none flex-shrink-0 min-w-full flex justify-between items-center gap-[var(--gap)] animate-scroll"
+      aria-hidden="true"
     >
-      <div class="p-4 pb-2 flex items-end flex-col flex-1">
-        <div class="relative w-full h-full">
-          <div>
-            <div style="display: block; overflow: hidden; position: absolute; inset: 0px; box-sizing: border-box; margin: 0px;">
-              <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}">
-            </div>
-          </div>
-        </div>
-        <div class=" dotted-link relative w-full text-sm md:text-lg text-center py-2">032c STORE</div>
-      </div></a
-    ><a
-      class="chakra-link h-48 md:h-64 2xl:h-96 w-full flex css-12ooz0z"
-      href="{{ routes.collections_url }}"
-      style="background-color: rgb(254, 0, 0);"
-    >
-      <div class="p-4 pb-2 flex items-end flex-col flex-1">
-        <div class="relative w-full h-full">
-          <div>
-            <div style="display: block; overflow: hidden; position: absolute; inset: 0px; box-sizing: border-box; margin: 0px;">
-              <img height="" width="" src="{{ 'DEEDS-WED.jpg' | asset_url }}">
-            </div>
-          </div>
-        </div>
-        <div class="dotted-link relative w-full text-sm md:text-lg text-center py-2">BUY MAGAZINES</div>
-      </div>
-    </a>
-  </div>
- 
+      <li class="minus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="plus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="plus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="minus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="plus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit ametA</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="minus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="plus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+      <li class="minus flex items-center">
+        <span class="company font-bold">Lorem ipsum dolor sit amet</span>
+        <span class="price font-bold mx-1">Lorem ipsum dolor sit amet</span>
+        <span class="change">Lorem ipsum dolor sit amet</span>
+      </li>
+    </ul>
+</div>
 </section>
+
 <style>
-  .no-scrollbar::-webkit-scrollbar {
-    display: none;
+  /* Custom animation for the stock ticker */
+  @keyframes scroll {
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
   }
 
-  /* Hide scrollbar for IE, Edge, and Firefox */
-  .no-scrollbar {
-    -ms-overflow-style: none; /* IE and Edge */
-    scrollbar-width: none; /* Firefox */
+  /* Apply the scroll animation to the ticker list */
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
   }
 
-.tickerwrapper {
-  top: 30px;
-  left:0%;
-  border: 1px solid #444;
-  background: black;
-  color: red;
-  width: 99.9%;
-  height: 30px;
-  overflow: hidden;
-  cursor: pointer;
-}
+  /* Pause animation on hover */
+  .stock-ticker:hover .animate-scroll {
+    animation-play-state: paused;
+  }
 
-ul.list {
-  position: relative;
-  display: inline-block;
-  list-style: none;
-  padding:0;
-  margin:0;
-}
-
-ul.list.cloned {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-
-ul.list li {
-  float: left;
-  padding-left: 20px;
-}
+  /* Custom variable for the gap between ticker items */
+  .stock-ticker {
+    --gap: 20px;
+  }
 </style>

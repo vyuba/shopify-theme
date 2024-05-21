@@ -1,5 +1,5 @@
 <div
-  class="relative bg-white mb-14 "
+  class="relative bg-white "
   x-data="{ openMenu: false, openCart: false }"
   :class="{ 'overflow-hidden': openMenu || openCart, 'overflow-visible': !openMenu && !openCart }"
 >
@@ -93,7 +93,7 @@
         </a>
       </div>
       {% for list in linklists['main-menu'].links %}
-        <li class="border-b  border-black">
+        <li class=" border-b  border-black">
           <a
             href="{{ list.url }}"
             class="  block p-4 {% if list.title == 'Store'  %}hidden {% endif %}"
@@ -106,12 +106,12 @@
             {% endif %}
           </a>
           {% if list.title == 'Store' %}
-            <ul class="border-b p-4">
+            <ul class="dropdownBtn border-b p-4">
               <li class="capitalize flex items-center justify-between w-full">
                 <p>store</p>
                 {% render 'icon-dropdown-notOpen' %}
               </li>
-                <div class="collections-container hidden ">
+                <div class="list collections-container hidden ">
                   {% for collection in collections %}
                     <div class="collection-item pt-4">
                       <h2>{{ collection.title |  capitalize }}</h2>
@@ -122,21 +122,23 @@
           {% endif %}
         </li>
       {% endfor %}
-      <ul class="border-b capitalize p-4 border-black">
+      <ul class="dropdownBtn border-b capitalize p-4 border-black">
         <li class=" flex items-center justify-between w-full">
           <p>information</p>
           {% render 'icon-dropdown-notOpen' %}
         </li>
         {% for list in linklists.Footer.links %}
-          <li class="py-4 hidden">
-            <a
-              href="{{ list.url }}"
-              class=""
-              aria-current="true"
-            >
-              {{ list.title }}
-            </a>
-          </li>
+            <div class="list hidden ">
+                <li class="py-4">
+                  <a
+                    href="{{ list.url }}"
+                    class=""
+                    aria-current="true"
+                  >
+                    {{ list.title }}
+                  </a>
+                </li>
+            </div>
         {% endfor %}
       </ul>
       <div class="w-full grid place-items-center">
