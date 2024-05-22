@@ -13,17 +13,20 @@
     </div>
   {% endcomment %}
 <div class="page-conatiner w-full overflow-hidden  h-full flex flex-col md:flex-row">
-    <div class="relative md:w-1/2 h-screen md:h-full md:border-r border-white bg-black">
-    <a  href="https://www.deedsmag.com/?fbclid=PAZXh0bgNhZW0CMTEAAaYdoDKwminG0JUNlCVq77hxl1iReWqX8VDMHbfcoSN9z1o2BBmXA4iIu-8_aem_AXTdAWkzcfrHxRaP2dFsdIkD4Haca-X-fU2MtBrEbYs6JC8H0Im5KcPzWMyRSE_5oH5YwlUK4Nlj2zn9eXUqUvfY">
-    <img src="{{ '415986883_18300274177181708_667487470100688065_n.jpg' | asset_url }}" class="absolute inset-0 w-full h-full object-cover" height="" width="" alt="Background Image" />
-        <div class="flex items-end justify-center h-full pb-4">
-            <h1 class="text-center bg-opacity-50 relative  capitalize text-2xl text-white font-medium font-sans underline-offset-2 underline decoration-dotted  hover:underline  cursor-pointer">magazine</h1>
+    <div class="h-screen md:pb-20 flex flex-col w-full  md:w-1/2">
+        <div class="relative w-full h-full md:border-r border-white bg-black">
+        <a  href="https://www.deedsmag.com/?fbclid=PAZXh0bgNhZW0CMTEAAaYdoDKwminG0JUNlCVq77hxl1iReWqX8VDMHbfcoSN9z1o2BBmXA4iIu-8_aem_AXTdAWkzcfrHxRaP2dFsdIkD4Haca-X-fU2MtBrEbYs6JC8H0Im5KcPzWMyRSE_5oH5YwlUK4Nlj2zn9eXUqUvfY">
+        <img src="{{ '415986883_18300274177181708_667487470100688065_n.jpg' | asset_url }}" class="absolute inset-0 w-full h-full object-cover" height="" width="" alt="Background Image" />
+            <div class="flex items-end justify-center h-full   pb-4 ">
+                <h1 class="text-center bg-opacity-50 relative   capitalize text-2xl text-white font-medium font-sans underline-offset-2 underline decoration-dotted  hover:underline  cursor-pointer">magazine</h1>
+            </div>
+        </a>
         </div>
-    </a>
-    </div>
-        <div class="stock-ticker md:hidden bg-black text-red-500  overflow-hidden select-none flex gap-[var(--gap)] py-1 border-y border-white ">
+        <div class="stock-ticker  md:hidden bg-black text-red-500  overflow-hidden select-none flex gap-[var(--gap)] py-1 border-y border-white ">
             {% render 'infinite-scroll' %}
         </div>
+
+    </div>
         <div class="relative md:w-1/2 h-screen  md:h-full md:border-l border-white bg-black">
         <a  href="{{ routes.all_products_collection_url}}">
             <img src="{{ '415990198_18300274213181708_2894705610518394442_n.jpg' | asset_url }}" class="absolute inset-0 w-full h-full md:h-full object-cover" height="" width="" alt="Background Image" />
