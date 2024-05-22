@@ -57,8 +57,8 @@
       </ul>
     </div>
 
-    <div class="main-product-right md:ml-10 ml-0">
-      <h1>{{ product.title }}</h1>
+    <div class="main-product-right md:ml-10 ml-0 pt-5 md:pt-0">
+      <h1 class="text-white">{{ product.title }}</h1>
 
       <div class="main-product-prices">
         <p class="main-product-compare {% unless product.selected_or_first_available_variant.compare_at_price > product.selected_or_first_available_variant.price %}hide{% endunless %}">
@@ -68,10 +68,6 @@
         <p class="main-product-price">
           {{ product.selected_or_first_available_variant.price | money }}
         </p>
-      </div>
-
-      <div class="main-product-description">
-        {{ product.description }}
       </div>
 
       {% form 'product', product %}
@@ -86,7 +82,7 @@
           <div class="main-product-options">
             {% for option in product.options_with_values %}
               <fieldset class="main-product-option">
-                <legend>{{ option.name }}</legend>
+                <legend class="text-white">{{ option.name }}</legend>
                 <div class="main-product-option-radios">
                   {% for value in option.values %}
                     <div class="main-product-option-radio">
@@ -132,7 +128,7 @@
           <div>
             <div class="quantity-selector">
               <button type="button" class="quantity-selector-minus">
-                {% comment %} {% include 'minus.svg' %} {% endcomment %} -
+                {%  render 'icon-minus' %}
               </button>
               <input
                 id="quantity"
@@ -141,7 +137,7 @@
                 class="quantity-selector-inputselector-"
               >
               <button type="button" class="quantity-selector-plus">
-                {% comment %} {% include 'plus.svg' %} {% endcomment %}+
+                {%  render 'icon-plus' %}
               </button>
             </div>
           </div>
@@ -162,6 +158,9 @@
           {% endif %}
         </button>
       {% endform %}
+      <div class="main-product-description">
+        {{ product.description }}
+      </div>
     </div>
   </div>
 </div>
@@ -259,3 +258,14 @@
   })
 </script>
 
+{% schema %}
+  {
+    "name": "Main product",
+    "settings": [],
+    "presets": [
+      {
+        "name": "Main product"
+      }
+    ]
+  }
+  {% endschema %}
