@@ -13,7 +13,7 @@
   </div>
   <div class="flex flex-col gap-4 ">
     <h1 class="text-xl font-medium capitalize">{{ product.title | capitalize }}</h1>
-    <form class="flex flex-col" action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+    <form class="flex flex-col gap-4" action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
       <ul class="text-white" name="id" id="productSelect">
         {% for variant in product.variants %}
           {% if variant.available %}
@@ -24,7 +24,7 @@
         {% endfor %}
       </ul>
       {{ current_variant.price | money }}
-      <label class="text-black" for="Quantity">quantity</label>
+      <label class="text-white capitalize" for="Quantity">quantity</label>
       <input class="text-black" type="number" id="Quantity" name="quantity" value="1" min="1">
       <button
         type="submit"
