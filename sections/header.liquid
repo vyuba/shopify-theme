@@ -24,7 +24,7 @@
         {% for link in linklists['main-menu'].links %}
           {% if link.links != blank %}
             <div class="relative">
-              <button type="button" class="inline-flex items-center text-base text-black hover:text-red-500">
+              <button type="button" class="inline-flex items-center text-base text-black hover:text-red-500 ">
                 {{ link.title }}
               </button>
             </div>
@@ -41,10 +41,10 @@
         {% endfor %}
       </nav>
       <!-- STORE NAME / STORE LOGO -->
-      <div class="flex  justify-center truncate">
+      <div class="flex items-center  justify-center truncate">
         <h1 class="text-xl font-bold truncate">
           <a href="{{ routes.root_url  }}" class="block">
-            <img height="" width="" src="{{ 'deeds.png' | asset_url }}" alt="Default Logo Image" class="w-20">
+            <img height="" width="" src="{{ 'deeds.png' | asset_url }}" alt="Default Logo Image" class="w-20 ">
           </a>
         </h1>
       </div>

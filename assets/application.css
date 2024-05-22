@@ -1948,6 +1948,18 @@ video {
   padding-bottom: 2.25rem;
 }
 
+.pl-20 {
+  padding-left: 5rem;
+}
+
+.pl-36 {
+  padding-left: 9rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2290,6 +2302,18 @@ video {
     margin-top: 0px;
   }
 
+  .md\:ml-5 {
+    margin-left: 1.25rem;
+  }
+
+  .md\:ml-20 {
+    margin-left: 5rem;
+  }
+
+  .md\:mr-20 {
+    margin-right: 5rem;
+  }
+
   .md\:block {
     display: block;
   }
@@ -2378,6 +2402,14 @@ video {
 
   .md\:pb-4 {
     padding-bottom: 1rem;
+  }
+
+  .md\:pl-20 {
+    padding-left: 5rem;
+  }
+
+  .md\:pl-24 {
+    padding-left: 6rem;
   }
 
   .md\:text-xl {

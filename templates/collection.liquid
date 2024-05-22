@@ -1,7 +1,7 @@
-<div class=" bg-black pt-14">
+<div class="pb-9 bg-black pt-14">
   {% paginate collection.products by 50 %}
-  <h1>{{ collection.title }}</h1>
-  <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 mx-4">
+  <h1 class="font-bold text-white text-3xl ">{{ collection.title }}</h1>
+  <div class="grid  grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 mx-4">
       {% for product in collection.products %}
         {% render 'product-card', product:product %}
       {% else %}
@@ -12,6 +12,8 @@
       {% endif %}
       </div>
     {% endpaginate %}
-
-</div>
+    </div>
+    <div class="stock-ticker md:hidden bg-black text-red-500  overflow-hidden select-none flex gap-[var(--gap)] py-1 border-y border-white ">
+      {% render 'infinite-scroll' %}
+    </div>
 
