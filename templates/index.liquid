@@ -1,4 +1,4 @@
-<section class="flex flex-col w-full pt-10 bg-black h-full md:h-screen overflow-hidden  ">
+<section class="flex flex-col w-full  bg-black h-full md:h-screen overflow-hidden  ">
   {% comment %}
     <div class="w-full mx-4">
       <ul class="overflow-x-scroll flex-row no-scrollbar  flex items-center gap-4 whitespace-nowrap ">
@@ -13,19 +13,19 @@
     </div>
   {% endcomment %}
 <div class="page-conatiner w-full overflow-hidden  h-full flex flex-col md:flex-row">
-    <div class="h-screen md:pb-20 flex flex-col w-full  md:w-1/2">
-        <div class="relative w-full h-full md:border-r border-white bg-black">
+    <div class="h-screen md:pb-8 flex flex-col w-full  md:w-1/2">
+        <div class="relative w-full h-full   md:border-r border-white bg-black">
         <a  href="https://www.deedsmag.com/?fbclid=PAZXh0bgNhZW0CMTEAAaYdoDKwminG0JUNlCVq77hxl1iReWqX8VDMHbfcoSN9z1o2BBmXA4iIu-8_aem_AXTdAWkzcfrHxRaP2dFsdIkD4Haca-X-fU2MtBrEbYs6JC8H0Im5KcPzWMyRSE_5oH5YwlUK4Nlj2zn9eXUqUvfY">
-        <img src="{{ '415986883_18300274177181708_667487470100688065_n.jpg' | asset_url }}" class="absolute inset-0 w-full h-full object-cover" height="" width="" alt="Background Image" />
-            <div class="flex items-end justify-center h-full   pb-4 ">
+        <img src="{{ '416059130_18300274189181708_5071447815284573167_n.jpg' | asset_url }}" class="absolute inset-0 w-full h-full object-cover" height="" width="" alt="Background Image" />
+            <div class="flex items-end justify-center h-full pb-4 ">
                 <h1 class="text-center bg-opacity-50 relative   capitalize text-2xl text-white font-medium font-sans underline-offset-2 underline decoration-dotted  hover:underline  cursor-pointer">magazine</h1>
             </div>
         </a>
         </div>
-        <div class="stock-ticker  md:hidden bg-black text-red-500  overflow-hidden select-none flex gap-[var(--gap)] py-1 border-y border-white ">
+        <div class="stock-ticker items-center  md:hidden bg-black text-red-500  overflow-hidden select-none flex gap-[var(--gap)] py-1 border-y border-white ">
             {% render 'infinite-scroll' %}
         </div>
-
+        
     </div>
         <div class="relative md:w-1/2 h-screen  md:h-full md:border-l border-white bg-black">
         <a  href="{{ routes.all_products_collection_url}}">
