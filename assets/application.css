@@ -665,6 +665,10 @@ video {
   z-index: 50;
 }
 
+.z-\[10000\] {
+  z-index: 10000;
+}
+
 .order-1 {
   order: 1;
 }
@@ -1828,6 +1832,26 @@ video {
   padding-bottom: 1.75rem;
 }
 
+.py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .pb-4 {
   padding-bottom: 1rem;
 }
@@ -2260,6 +2284,11 @@ video {
 
 .ease-linear {
   transition-timing-function: linear;
+}
+
+.hover\:border-red-500:hover {
+  --tw-border-opacity: 1;
+  border-color: rgb(239 68 68 / var(--tw-border-opacity));
 }
 
 .hover\:bg-red-500:hover {

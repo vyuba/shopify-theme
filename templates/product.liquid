@@ -1,33 +1,40 @@
 {% assign current_variant = product.selected_or_first_available_variant %}
 {% assign featured_image = current_variant.featured_image | default: product.featured_image %}
 
-<div class="flex text-white flex-col md:flex-row pt-14">
+<div class="flex text-white flex-col md:flex-row pt-14 px-4">
   <div>
-    <img src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
+    <img class="hidden" src="{{ featured_image | img_url: 'large' }}" alt="{{ featured_image.alt | escape }}" id="ProductPhotoImg">
     {% for image in product.images %}
-      <a href="{{ image.src | img_url: 'large' }}">
+      {% render 'product-swipper', image:image  %}
+      {% comment %} <a href="{{ image.src | img_url: 'large' }}">
         <img src="{{ image.src | img_url: 'compact' }}" alt="{{ image.alt | escape }}">
-      </a>
+      </a> {% endcomment %}
     {% endfor %}
   </div>
-  <div class="flex flex-col">
-    <h1>{{ product.title }}</h1>
+  <div class="flex flex-col gap-4 ">
+    <h1 class="text-xl font-medium capitalize">{{ product.title | capitalize }}</h1>
     <form class="flex flex-col" action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
-      <select class="text-black" name="id" id="productSelect">
+      <ul class="text-white" name="id" id="productSelect">
         {% for variant in product.variants %}
           {% if variant.available %}
-            <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+            <li class=" border border-white hover:border-red-500 px-2 py-3 hover:bg-red-500 hover:text-black" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</li>
           {% else %}
-            <option disabled="disabled">{{ variant.title }} - sold out</option>
+            <li class=" border border-white px-2 py-3" disabled="disabled">{{ variant.title }} - sold out</li>
           {% endif %}
         {% endfor %}
-      </select>
+      </ul>
       {{ current_variant.price | money }}
       <label class="text-black" for="Quantity">quantity</label>
       <input class="text-black" type="number" id="Quantity" name="quantity" value="1" min="1">
-      <button type="submit" class="px-4 pr-20 bg-red-500 text-white font-medium text-lg capitalize hover:bg-white hover:text-black py-2" name="add" id="AddToCart">Add to cart</button>
+      <button
+        type="submit"
+        class=" bg-red-500 text-white font-medium text-lg capitalize hover:bg-white hover:text-black py-2"
+        name="add"
+        id="AddToCart"
+      >
+        Add to cart
+      </button>
     </form>
     <div class="text-white">{{ product.description }}</div>
-
   </div>
 </div>
